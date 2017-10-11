@@ -56,15 +56,8 @@ class beMerryClass {
     }
 }
 
-const activitiesForClasses = [
-    "dance",
-    "aerobics",
-    "party",
-    "eat",
-    "sleep",
-    "drink",
-    "be merry"
-]
+const activitiesForClasses = ["dance","aerobics","party","eat","sleep","drink","be merry"]
+
 function yourMain() {
     console.log('your suggested approach.')
     let dancec    = new danceClass, 
@@ -76,14 +69,11 @@ function yourMain() {
         beMerryc  = new beMerryClass
 
     const activityFunctions = [ dancec, aerobicsc, partyc, eatc, drinkc, sleepc, beMerryc]
-    //if match, call function, else do nothing, that's what false means in this statement
-    activityFunctions.forEach(activity => 
-        activitiesForClasses.forEach(act => 
-            activity.match(act) 
-            ? activity.fn() 
-            : false
-        )
-    )
+    //find functions that match, take the first one, call that function
+    activitiesForClasses.forEach(activity => {
+        let r = activityFunctions.filter(a => a.match(activity))[0]
+        r.fn()
+    })
     console.log('\n\n\n\n\n\n\n\n')
 }
 yourMain()
