@@ -1,40 +1,16 @@
-activityFunctions = {
-    "dance": function() {
-        console.log('shall we dance?')
-    },
-    "aerobics":function() {
-        console.log('1,2,1,2,1,2,1,2')
-    },
-    "party": function() {
-        console.log('boots n pants in boots n pants')
-    },
-    "eat": function() {
-        console.log('om nom nom')
-    }, 
-    "sleep": function() {
-        console.log('zzzzzzzzzxzxzxzxxzxzxxzzxxxxxxxxxx')
-    },
-    "drink": function() {
-        console.log('another pint of lager please, Mary')
-    },
-    "beMerry": function() {
-        console.log('wheeeeeeeeeeeeeeeee!!!')
-    }
+const activitiesPoly = ["dance","aerobics","party","eat","sleep","drink","be merry"]
+const activityFunctions = {
+    "dance"   : () => console.log('shall we dance?'),
+    "aerobics": () => console.log('1,2,1,2,1,2,1,2'),
+    "party"   : () => console.log('boots n pants in boots n pants'),
+    "eat"     : () => console.log('om nom nom'), 
+    "sleep"   : () => console.log('zzzzzzzzzxzxzxzxxzxzxxzzxxxxxxxxxx'),
+    "drink"   : () => console.log('another pint of lager please, Mary'),
+    "beMerry" : () => console.log('wheeeeeeeeeeeeeeeee!!!')
 }
-const activitiesPoly = [
-    "dance",
-    "aerobics",
-    "party",
-    "eat",
-    "sleep",
-    "drink",
-    "be merry"
-]
+
 function polyMain() {
-    console.log('Polymorphic way. Notice how the code is half the size of the class based way. This is one example of how classes are not necessarily objects, and how classes are not always the most polymorphic. Not to mention that the class way necessitates that you perform nested looping and instantiate n classes for every time you add a new condition.')
-    //if activity is a property, tryGet in Python
-    //call the function
-    //else call the default case
+    console.log('Polymorphic way. This is one example of how classes are not necessarily objects, and how classes are not always the most polymorphic. The class based approach necessitates class instantiation which can be costly the more conditions you add, and depending on how often you need to check them, where as these conditional functions are declared and initialized once. ')
     activitiesPoly.forEach(activity => 
         activity in activityFunctions 
         ? activityFunctions[activity]() 
